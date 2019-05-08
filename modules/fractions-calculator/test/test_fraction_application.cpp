@@ -33,11 +33,21 @@ class FractionCalculatorTest : public ::testing::Test {
     string output_;
 };
 
-TEST_F(FractionCalculatorTest, Do_Print_Help_Without_Arguments) {
+TEST_F(FractionCalculatorTest, Print_Help_If_No_Arguments) {
     vector<string> args = {};
 
     Act(args);
 
     Assert("This is a fraction calculator application\\..*");
 }
+
+TEST_F(FractionCalculatorTest, Can_Detect_Wrong_Number_Format) {
+    vector<string> args = { "gh", "55", "qw", "584", "+" };
+
+    Act(args);
+
+    Assert("gh is not the number.*");
+}
+
+
 

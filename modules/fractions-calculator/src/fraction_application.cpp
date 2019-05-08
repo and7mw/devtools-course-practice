@@ -3,6 +3,7 @@
 #include "include/fraction.h"
 #include "include/fraction_application.h"
 
+#include <cstring>
 #include <stdlib.h>
 #include <sstream>
 
@@ -96,7 +97,7 @@ std::string FractionCalculator::operator()(int argc, const char** argv) {
     case '+':
         f = f1 + f2;
         stream << "Numerator = " << f.GetNum() << " "
-            << "Imaginary = " << f.GetDen();
+            << "Denominator = " << f.GetDen();
         break;
     case '-':
         f = f1 - f2;
