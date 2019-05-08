@@ -49,5 +49,21 @@ TEST_F(FractionCalculatorTest, Can_Detect_Wrong_Number_Format) {
     Assert("gh is not the number.*");
 }
 
+TEST_F(FractionCalculatorTest, Can_Detect_Wrong_Operation_Format) {
+    vector<string> args = { "1", "1", "1", "1", "gh" };
+
+    Act(args);
+
+    Assert("Wrong operation format!");
+}
+
+TEST_F(FractionCalculatorTest, Can_Detect_Wrong_Number_Of_Arguments) {
+    vector<string> args = { "1", "2", "+" };
+
+    Act(args);
+
+    Assert("ERROR: Should be 5 arguments.\n\n");
+}
+
 
 

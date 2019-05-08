@@ -6,6 +6,7 @@
 #include <cstring>
 #include <stdlib.h>
 #include <sstream>
+#include <cerrno>
 
 FractionCalculator::FractionCalculator() : message_("") {}
 
@@ -40,8 +41,6 @@ int ParseInteger(const char* arg) {
 
     if (end == arg)
         throw std::string(arg) + " is not the number";
-    else if (*end != '\0')
-        throw std::string(arg) + " the number is out of range";
 
     return value;
 }
