@@ -4,8 +4,8 @@
 #include "include/fraction_application.h"
 
 #include <stdlib.h>
-#include <cstring>
 #include <string>
+#include <vector>
 #include <sstream>
 
 FractionCalculator::FractionCalculator() : message_("") {}
