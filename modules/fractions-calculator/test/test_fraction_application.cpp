@@ -65,5 +65,41 @@ TEST_F(FractionCalculatorTest, Can_Detect_Wrong_Number_Of_Arguments) {
     Assert("ERROR: Should be 5 arguments.\n\n");
 }
 
+TEST_F(FractionCalculatorTest, Can_Add_Fractions) {
+    vector<string> args = { "1", "2", "3", "4", "+" };
+
+    Act(args);
+
+    Assert("Numerator = 5 Denominator = 4");
+}
+
+TEST_F(FractionCalculatorTest, Can_Diff_Fractions) {
+    vector<string> args = { "3", "4", "1", "2", "-" };
+
+    Act(args);
+
+    Assert("Numerator = 1 Denominator = 4");
+}
+
+TEST_F(FractionCalculatorTest, Can_Mult_Fractions) {
+    vector<string> args = { "1", "2", "3", "4", "*" };
+
+    Act(args);
+
+    Assert("Numerator = 3 Denominator = 8");
+}
+
+TEST_F(FractionCalculatorTest, Can_Div_Fractions) {
+    vector<string> args = { "1", "2", "3", "4", "/" };
+
+    Act(args);
+
+    Assert("Numerator = 2 Denominator = 3");
+}
+
+
+
+
+
 
 

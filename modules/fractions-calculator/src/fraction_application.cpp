@@ -3,10 +3,10 @@
 #include "include/fraction.h"
 #include "include/fraction_application.h"
 
-#include <cstring>
 #include <stdlib.h>
+#include <cstring>
+#include <string>
 #include <sstream>
-#include <cerrno>
 
 FractionCalculator::FractionCalculator() : message_("") {}
 
@@ -23,12 +23,12 @@ void FractionCalculator::Help(const char* appname, const char* message) {
         "and <operation> is one of '+', '-', '*', '/'.\n";
 }
 
-bool FractionCalculator::ValidateNumberOfArguments(int argc, const char** argv) {
+bool FractionCalculator::ValidateNumberOfArguments(int argc,
+                                   const char** argv) {
     if (argc == 1) {
         Help(argv[0]);
         return false;
-    }
-    else if (argc != 6) {
+    } else if (argc != 6) {
         Help(argv[0], "ERROR: Should be 5 arguments.\n\n");
         return false;
     }
@@ -49,17 +49,13 @@ char ParseOperation(const char* arg) {
     char op;
     if (strcmp(arg, "+") == 0) {
         op = '+';
-    }
-    else if (strcmp(arg, "-") == 0) {
+    } else if (strcmp(arg, "-") == 0) {
         op = '-';
-    }
-    else if (strcmp(arg, "*") == 0) {
+    } else if (strcmp(arg, "*") == 0) {
         op = '*';
-    }
-    else if (strcmp(arg, "/") == 0) {
+    } else if (strcmp(arg, "/") == 0) {
         op = '/';
-    }
-    else {
+    } else {
         throw std::string("Wrong operation format!");
     }
     return op;
