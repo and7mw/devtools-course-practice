@@ -4,6 +4,9 @@
 
 #include "include/fraction_application.h"
 
+#include <string>
+#include <vector>
+
 using ::testing::internal::RE;
 using std::vector;
 using std::string;
