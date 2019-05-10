@@ -2,7 +2,10 @@
 
 #include <iostream>
 
-int main() {
-    std::cout << "Hello World!" << std::endl;
+#include "include/fraction_application.h"
+
+int main(int argc, const char** argv) {
+    FractionCalculator app;
+    std::cout << app(argc, argv);
     return 0;
 }
