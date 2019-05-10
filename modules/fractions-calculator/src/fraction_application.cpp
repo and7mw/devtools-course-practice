@@ -106,15 +106,10 @@ std::string FractionCalculator::operator()(int argc, const char** argv) {
             << "Denominator = " << f.GetDen();
         break;
     case '/':
-        try {
             f = f1 / f2;
             stream << "Numerator = " << f.GetNum() << " "
                 << "Denominator = " << f.GetDen();
             break;
-        }
-        catch (std::string& str) {
-            return str;
-        }
     }
 
     message_ = stream.str();

@@ -2,10 +2,10 @@
 
 #include <gtest/gtest.h>
 
-#include "include/fraction_application.h"
-
 #include <string>
 #include <vector>
+
+#include "include/fraction_application.h"
 
 using ::testing::internal::RE;
 using std::vector;
